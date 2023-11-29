@@ -1,0 +1,19 @@
+<html lang="es">
+<head>
+    <title>Página Web de Recetas Culinarias</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button (click)="borrarTodasLasNotas()">Borrar Recetas</button>
+    <p class="recipe-title">Recetas</p>
+    <h2>Recetas</h2>
+<ul>
+  <li *ngFor="let nota of listaNotas | async">
+    <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->
+    <p>Ingredientes: {{ nota.nota }}</p>
+    <p>Pasos: {{ nota.fecha }}</p>
+    <h3 routerLink="/paginas/crear/{{nota.etiqueta}}">{{nota.nombre}}</h3>
+  </li>
+</ul>
+</body>
