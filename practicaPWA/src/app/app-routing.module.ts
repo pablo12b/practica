@@ -4,8 +4,8 @@ import { VisualizarComponent } from './pages/visualizar/visualizar.component';
 import { CrearComponent } from './pages/crear/crear.component';
 
 const routes: Routes = [
-  {path:"pages/crear", component: CrearComponent},
-  {path:"pages/visualizar", component: VisualizarComponent}
+  {path:"paginas/crear", component: CrearComponent},
+  {path:"paginas/visualizar", component: VisualizarComponent}
 ];
 
 @NgModule({
