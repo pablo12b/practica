@@ -18,7 +18,7 @@
     <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->
     <p>Ingredientes: {{ nota.nota }}</p>
     <p>Pasos: {{ nota.fecha }}</p>
-    <h3 routerLink="/paginas/crear/{{nota.etiqueta}}">{{nota.etiqueta}}</h3>
+    <h3 (click)="goEditar(nota)">{{nota.etiqueta}}</h3>
   </li>
 </ul>
 </body>
