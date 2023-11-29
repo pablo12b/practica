@@ -1,27 +1,20 @@
-# PracticaPWA
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Funcionalidades Básicas:
+• Gestión de Notas/Tareas: Los usuarios deben poder crear, visualizar, editar y eliminar notas o
+tareas.
+• Almacenamiento en la Nube: Todas las notas o tareas deben almacenizarse en Firebase Firestore.
+# Diseño Responsivo:
+• La aplicación debe ser totalmente responsiva y brindar una experiencia de usuario fluida tanto en
+dispositivos móviles como de escritorio.
+# PWA:
+• La aplicación debe ser una PWA, lo que implica que debe funcionar offline y ser instalable en
+dispositivos móviles y de escritorio.
+• Configurar correctamente el Service Worker y el archivo manifest (personalización).
+# Despliegue:
+• Desplegar la aplicación en Firebase Hosting.
+# Demostración:
+• Grabar y subir un video demostrando:
+• El proceso de instalación de la PWA en un dispositivo móvil y en un dispositivo de
+escritorio.
+• La funcionalidad de la aplicación en ambos tipos de dispositivos.
+• La capacidad de la aplicación para manejar la funcionalidad offline (opcionalmente
+demostrar la sincronización de datos cuando se recupera la conexión a internet).
