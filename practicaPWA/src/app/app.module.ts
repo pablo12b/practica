@@ -2,31 +2,34 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { MenuComponent } from './pages/menu/menu.component';
-import { VisualizarComponent } from './pages/visualizar/visualizar.component';
 import { CrearComponent } from './pages/crear/crear.component';
+import { VisualizarComponent } from './pages/visualizar/visualizar.component';
+import { environment } from './pages/environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    VisualizarComponent,
-    CrearComponent
+    CrearComponent,
+    VisualizarComponent
   ],
   imports: [
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp({"projectId":"practicapwa-63f87","appId":"1:1004037856530:web:9b4dc2167d2912fef467cb","storageBucket":"practicapwa-63f87.appspot.com","apiKey":"AIzaSyDI8mwwf6VvQlj_It2j8F0ZzYoooC53FvE","authDomain":"practicapwa-63f87.firebaseapp.com","messagingSenderId":"1004037856530","measurementId":"G-HWT214MLYM"})),
-    provideFirestore(() => getFirestore())
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

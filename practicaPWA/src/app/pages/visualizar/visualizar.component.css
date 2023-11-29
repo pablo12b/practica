@@ -1,61 +1,54 @@
-/* Estilo para el cuerpo de la página */
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Color de fondo oscuro */
-    color: #fff; /* Color de texto blanco */
-}
-
-/* Estilo para el botón */
-button {
-    background-color: #333; /* Color de fondo oscuro para el botón */
-    color: #fff; /* Color de texto blanco */
+    background-color: #f8f9fa; /* Color de fondo suave */
+    color: #333; /* Color de texto principal más oscuro para un aspecto más formal */
+    margin: 0;
+  }
+  
+  button {
+    background-color: #007bff; /* Color azul brillante */
+    color: #fff; /* Texto blanco */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Efecto de transición suave para el color de fondo */
-}
-
-/* Cambiar color de fondo del botón al pasar el ratón sobre él */
-button:hover {
-    background-color: #555; /* Color de fondo oscuro más claro */
-}
-
-/* Estilo para los títulos */
-.recipe-title, h2, h3 {
-    color: #ffd700; /* Color dorado para los títulos */
-}
-
-/* Estilo para la lista de recetas */
-ul {
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Tonos más oscuros al pasar el ratón */
+  }
+  
+  .recipe-title, h2 {
+    color: #0a488b; /* Mismo color azul brillante */
+  }
+  
+  ul {
     list-style: none;
     padding: 0;
-}
-
-/* Estilo para los elementos de la lista de recetas */
-li {
-    margin-bottom: 20px;
-}
-
-/* Estilo para los párrafos dentro de los elementos de la lista */
-li p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Estilo para los enlaces dentro de los elementos de la lista */
-li h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff; /* Color de texto blanco */
-    transition: color 0.3s ease; /* Efecto de transición suave para el color del texto */
-}
-
-/* Cambiar color del texto al pasar el ratón sobre el enlace */
-li h3:hover {
-    color: #ffd700; /* Color dorado */
-}
+  }
+  
+  li {
+    border: 1px solid #ddd; /* Borde del elemento de lista */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sutil sombra al pasar el ratón */
+  }
+  
+  h3 {
+    color: #004080; /* Azul más oscuro y formal */
+    margin-bottom: 5px;
+  }
+  
+  
+  /* Estilo para el contenido de las notas */
+  p {
+    margin-bottom: 5px;
+  }
+  

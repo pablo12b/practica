@@ -1,5 +1,5 @@
 export class Nota {
     nota?: string;
-    fecha?: string;
+    fecha?: Date;
     etiqueta?: string;
   }  

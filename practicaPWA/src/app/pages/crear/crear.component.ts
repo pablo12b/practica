@@ -3,6 +3,7 @@ import { Nota } from '../domain/nota';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotasService } from '../services/notas.service';
 import { NotasFirebaseService } from '../services/notas-firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear',
@@ -12,10 +13,10 @@ import { NotasFirebaseService } from '../services/notas-firebase.service';
 export class CrearComponent {
   formulario: FormGroup;
 
-  constructor(private fb: FormBuilder, private notasService: NotasService, private notasFirebaseService: NotasFirebaseService) {
+  constructor(private router: Router ,private fb: FormBuilder, private notasService: NotasService, private notasFirebaseService: NotasFirebaseService) {
     this.formulario = this.fb.group({
       nota: ['', Validators.required],
-      fecha: ['', Validators.required],
+      fecha: [null, Validators.required],
       etiqueta: ['', Validators.required],
     });
   }

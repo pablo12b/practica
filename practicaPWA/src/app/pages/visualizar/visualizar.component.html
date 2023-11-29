@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <button (click)="borrarTodasLasNotas()">Borrar Recetas</button>
-    <p class="recipe-title">Recetas</p>
-    <h2>Recetas</h2>
+    <button (click)="borrarTodasLasNotas()">Borrar Notas</button>
+    <h2>Notas</h2>
 <ul>
   <li *ngFor="let nota of listaNotas | async">
     <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->

@@ -1,0 +1,50 @@
+/* Estilos para el formulario */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #28a745; /* Cambiado a un verde (puedes ajustar este color) */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #218838; /* Cambiado a un tono más oscuro al pasar el ratón (puedes ajustar este color) */
+  }
+  
+  /* Estilo para deshabilitar el botón cuando el formulario es inválido */
+  button[disabled] {
+    background-color: #6c757d; /* Cambiado a un gris para el estado deshabilitado (puedes ajustar este color) */
+    cursor: not-allowed;
+  }
