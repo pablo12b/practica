@@ -4,7 +4,7 @@ import { Nota } from '../domain/nota';
 @Injectable({
   providedIn: 'root'
 })
-export class NotasService {
+export class  NotasService {
   private notas: Nota[] = [];
 
   agregarReceta(nota: Nota) {

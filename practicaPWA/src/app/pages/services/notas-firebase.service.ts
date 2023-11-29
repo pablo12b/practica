@@ -33,11 +33,16 @@ export class NotasFirebaseService {
       });
   }
 
+
   save(nota: Nota){
-    const uid = nota.etiqueta
-    console.log('Nota', nota)
-    return this.notasRef.doc(uid).set(Object.assign({}, nota))
-  }
+    if(nota.uid){
+      return this.notasRef.doc(nota.uid).update(Object.assign({}, nota))
+    }else{
+      nota.uid = nota.etiqueta
+      console.log('persona', nota)
+      return this.notasRef.doc(nota.uid).set(Object.assign({}, nota))
+    }
+  }
 
   getNota(uid:string){
     console.log("uid", uid)

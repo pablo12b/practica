@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CrearComponent {
   formulario: FormGroup;
+  nota : Nota = new Nota()
 
   constructor(private router: Router ,private fb: FormBuilder, private notasService: NotasService, private notasFirebaseService: NotasFirebaseService) {
     this.formulario = this.fb.group({
@@ -19,13 +20,17 @@ export class CrearComponent {
       fecha: [null, Validators.required],
       etiqueta: ['', Validators.required],
     });
+    let params = this.router.getCurrentNavigation()?.extras.queryParams;
+      if(params){
+        console.log(params)
+        this.nota = params['nota']
+      }
   }
 
   onSubmit() {
     if (this.formulario.valid) {
-      const nota = this.formulario.value as Nota;
-      this.notasService.agregarReceta(nota);
-      this.notasFirebaseService.save(nota);
+      this.notasService.agregarReceta(this.nota);
+      this.notasFirebaseService.save(this.nota);
       this.formulario.reset();
       }
     }

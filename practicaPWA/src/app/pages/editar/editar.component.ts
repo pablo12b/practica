@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Nota } from '../domain/nota';
+
+import { NavigationExtras} from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotasFirebaseService } from '../services/notas-firebase.service';
+import { NotasService } from '../services/notas.service';
 
 @Component({
   selector: 'app-editar',
@@ -9,27 +12,27 @@ import { NotasFirebaseService } from '../services/notas-firebase.service';
   styleUrls: ['./editar.component.css']
 })
 export class EditarComponent {
-  nota: Nota = new Nota();
+  nota : Nota[] = []
 
-  
-  constructor(private router: Router, 
-      private route: ActivatedRoute,
-      private notasFirebaseService: NotasFirebaseService){
+  listaTareas: any
+  tareaSeleccionada: Nota | null = null;
 
-        this.route.params.subscribe(params => {
-          console.log(params)
-          if(params['etiqueta']){
-            this.loadPersona(params['etiqueta'])
-          }
-        })
+  constructor(private notaService : NotasService,
+    private notasFirebaseService : NotasFirebaseService,
+      private router: Router){
+    this.nota = notaService.obtenerNotas()
 
+    this.listaTareas = this.notasFirebaseService.getAll()
   }
 
-  loadPersona(uid: string) {
-    this.notasFirebaseService.getNota(uid).subscribe(data => {
-      console.log(data)
-      this.nota = <any> data
-    })
+  goEditar(nota: Nota){
+    console.log("editando", nota)
+    let params: NavigationExtras = {
+      queryParams: {
+        nota: nota
+      }
+    }
+    this.router.navigate(['paginas/crear'], params)
   }
 
 }

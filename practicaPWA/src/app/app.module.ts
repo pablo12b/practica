@@ -14,6 +14,7 @@ import { CrearComponent } from './pages/crear/crear.component';
 import { VisualizarComponent } from './pages/visualizar/visualizar.component';
 import { environment } from './pages/environments/environment';
 import { EditarComponent } from './pages/editar/editar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,13 @@ import { EditarComponent } from './pages/editar/editar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}],
   bootstrap: [AppComponent]
