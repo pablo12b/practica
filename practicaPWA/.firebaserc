@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "practicapwa-63f87": {
+      "hosting": {
+        "practicaPWA": [
+          "practicapwa-63f87"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "practicapwa-63f87"
+  }
+}
