@@ -23,6 +23,16 @@ export class NotasFirebaseService {
     return this.notasRef.valueChanges()
   }
 
+  eliminarCampo(uid: string) {
+    this.db.doc(this.path+'/'+uid).delete()
+      .then(() => {
+        console.log('Campo eliminado correctamente');
+      })
+      .catch(error => {
+        console.error('Error al eliminar campo:', error);
+      });
+  }
+
   save(nota: Nota){
     const uid = nota.etiqueta
     console.log('Nota', nota)

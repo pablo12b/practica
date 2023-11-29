@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <button (click)="borrarTodasLasNotas()">Borrar Notas</button>
+    <!-- En tu componente HTML -->
+    <div>
+      <label for="campoABorrar">Etiqueta a Borrar:</label>
+      <input type="text" id="campoABorrar" [(ngModel)]="etiquetaBorrar">
+      <button (click)="borrarTodasLasNotas()">Borrar Nota</button>
+    </div>
+
     <h2>Notas</h2>
 <ul>
   <li *ngFor="let nota of listaNotas | async">
     <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->
     <p>Ingredientes: {{ nota.nota }}</p>
     <p>Pasos: {{ nota.fecha }}</p>
-    <h3 routerLink="/paginas/crear/{{nota.etiqueta}}">{{nota.nombre}}</h3>
+    <h3 routerLink="/paginas/crear/{{nota.etiqueta}}">{{nota.etiqueta}}</h3>
   </li>
 </ul>
 </body>

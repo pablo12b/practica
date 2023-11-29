@@ -12,6 +12,7 @@ import { NotasService } from '../services/notas.service';
 export class VisualizarComponent implements OnInit {
   notas: Nota[] = [];
   terminoBusqueda: string = '';
+  etiquetaBorrar: string = '';
 
   listaNotas: any
 
@@ -26,7 +27,7 @@ export class VisualizarComponent implements OnInit {
   }
 
   borrarTodasLasNotas() {
-    this.notasService.borrarNotas();
+    this.notasFirebaseService.eliminarCampo(this.etiquetaBorrar);
   }
 
   goEditar(receta: any){
