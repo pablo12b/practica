@@ -13,13 +13,15 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { CrearComponent } from './pages/crear/crear.component';
 import { VisualizarComponent } from './pages/visualizar/visualizar.component';
 import { environment } from './pages/environments/environment';
+import { EditarComponent } from './pages/editar/editar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     CrearComponent,
-    VisualizarComponent
+    VisualizarComponent,
+    EditarComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

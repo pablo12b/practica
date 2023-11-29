@@ -30,14 +30,14 @@ export class VisualizarComponent implements OnInit {
     this.notasFirebaseService.eliminarCampo(this.etiquetaBorrar);
   }
 
-  goEditar(receta: any){
-    console.log("editando", receta)
+  goEditar(nota: any){
+    console.log("editando", nota)
 
     let params: NavigationExtras = {
       queryParams: {
-        receta: receta
+        nota: nota
       }
     }
-    this.router.navigate(['paginas/formulario'], params)
+    this.router.navigate(['paginas/crear'], params)
   }
 }

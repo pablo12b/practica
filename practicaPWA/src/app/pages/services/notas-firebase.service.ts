@@ -39,7 +39,7 @@ export class NotasFirebaseService {
     return this.notasRef.doc(uid).set(Object.assign({}, nota))
   }
 
-  getReceta(uid:string){
+  getNota(uid:string){
     console.log("uid", uid)
     return this.db.doc(this.path+'/'+uid).valueChanges()
   }
