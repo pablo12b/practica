@@ -15,6 +15,7 @@ import { VisualizarComponent } from './pages/visualizar/visualizar.component';
 import { environment } from './pages/environments/environment';
 import { EditarComponent } from './pages/editar/editar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
+    AngularFirestoreModule.enablePersistence(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -38,7 +40,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

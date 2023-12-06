@@ -5,18 +5,15 @@ import { Nota } from '../domain/nota';
   providedIn: 'root'
 })
 export class  NotasService {
-  private notas: Nota[] = [];
+  notas: Nota[] = [];
 
   agregarReceta(nota: Nota) {
-    const notas = this.obtenerNotas();
-      // Agregar una verificación para asegurarse de que event y event.target no sean nulos
-          notas.push(nota);
-          localStorage.setItem('notas', JSON.stringify(notas));
+    this.notas.push(nota);
+    localStorage.setItem('notas', JSON.stringify(this.notas));
   }
 
   obtenerNotas() {
-    const notas = localStorage.getItem('notas');
-    return notas ? JSON.parse(notas) : [];
+    return this.notas
   }
 
   borrarNota(nombreNota: string) {

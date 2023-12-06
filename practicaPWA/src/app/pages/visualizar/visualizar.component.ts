@@ -18,9 +18,9 @@ export class VisualizarComponent {
 
   constructor(private router: Router, private notasService: NotasService, private notasFirebaseService: NotasFirebaseService) {
     
-    this.notas = notasService.obtenerNotas();
+    this.notas = notasService.obtenerNotas()
 
-    this.listaNotas = notasFirebaseService.getAll()
+    this.listaNotas = this.notasFirebaseService.getAll()
   }
 
   borrarTodasLasNotas() {
