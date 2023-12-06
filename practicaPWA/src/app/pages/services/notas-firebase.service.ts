@@ -39,7 +39,7 @@ export class NotasFirebaseService {
       return this.notasRef.doc(nota.uid).update(Object.assign({}, nota))
     }else{
       nota.uid = nota.etiqueta
-      console.log('persona', nota)
+      console.log('nota', nota)
       return this.notasRef.doc(nota.uid).set(Object.assign({}, nota))
     }
   }

@@ -16,8 +16,8 @@
 <ul>
   <li *ngFor="let nota of listaNotas | async">
     <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->
-    <p>Ingredientes: {{ nota.nota }}</p>
-    <p>Pasos: {{ nota.fecha }}</p>
+    <p>Nota: {{ nota.nota }}</p>
+    <p>Fecha: {{ nota.fecha }}</p>
     <h3 (click)="goEditar(nota)">{{nota.etiqueta}}</h3>
   </li>
 </ul>
