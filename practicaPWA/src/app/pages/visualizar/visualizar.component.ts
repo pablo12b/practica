@@ -9,7 +9,7 @@ import { NotasService } from '../services/notas.service';
   templateUrl: './visualizar.component.html',
   styleUrls: ['./visualizar.component.css']
 })
-export class VisualizarComponent implements OnInit {
+export class VisualizarComponent {
   notas: Nota[] = [];
   terminoBusqueda: string = '';
   etiquetaBorrar: string = '';
@@ -17,13 +17,10 @@ export class VisualizarComponent implements OnInit {
   listaNotas: any
 
   constructor(private router: Router, private notasService: NotasService, private notasFirebaseService: NotasFirebaseService) {
-    this.notas = notasService.obtenerNotas()
+    
+    this.notas = notasService.obtenerNotas();
 
-    this.listaNotas = this.notasFirebaseService.getAll()
-  }
-
-  ngOnInit() {
-    this.notas = this.notasService.obtenerNotas();
+    this.listaNotas = notasFirebaseService.getAll()
   }
 
   borrarTodasLasNotas() {

@@ -1,9 +1,4 @@
-<html lang="es">
-<head>
-    <title>Página Web de Recetas Culinarias</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+
 <body>
     <!-- En tu componente HTML -->
     <div>
@@ -15,7 +10,6 @@
     <h2>Notas</h2>
 <ul>
   <li *ngFor="let nota of listaNotas | async">
-    <!--<a (click)="goEditar(receta)">{{ receta.nombre }}</a>-->
     <p>Nota: {{ nota.nota }}</p>
     <p>Fecha: {{ nota.fecha }}</p>
     <h3 (click)="goEditar(nota)">{{nota.etiqueta}}</h3>
