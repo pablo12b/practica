@@ -7,5 +7,6 @@ export const environment = {
         messagingSenderId: "1004037856530",
         appId: "1:1004037856530:web:9b4dc2167d2912fef467cb",
         measurementId: "G-HWT214MLYM"
-      }
+      },
+    WS_PATH: 'http://localhost:9080/demo631/rs'
 };

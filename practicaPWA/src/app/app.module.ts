@@ -16,6 +16,8 @@ import { environment } from './pages/environments/environment';
 import { EditarComponent } from './pages/editar/editar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HttpClientModule} from '@angular/common/http';
+import { ClientesComponent } from './pages/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     MenuComponent,
     CrearComponent,
     VisualizarComponent,
-    EditarComponent
+    EditarComponent,
+    ClientesComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
@@ -38,7 +41,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    HttpClientModule
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}],
