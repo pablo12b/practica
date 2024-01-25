@@ -8,5 +8,5 @@ export const environment = {
         appId: "1:1004037856530:web:9b4dc2167d2912fef467cb",
         measurementId: "G-HWT214MLYM"
       },
-    WS_PATH: 'http://localhost:9080/demo631/rs'
+    WS_PATH: 'http://localhost:8081/demo631/rs'
 };

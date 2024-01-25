@@ -1,0 +1,39 @@
+<h1>Productos</h1>
+
+<form>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input type="number" name="txtId"  [(ngModel)]="producto.id" aria-label="ID de Producto"></td>
+        </tr>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" name="txtNombre"  [(ngModel)]="producto.nombre" aria-label="Nombre de Producto"></td>
+        </tr>
+        <tr>
+            <td>Categoria:</td>
+            <td><input type="text" name="txtCategoria"  [(ngModel)]="producto.categoria" aria-label="Categoria de Producto"></td>
+        </tr>
+        <tr>
+            <td>Precio:</td>
+            <td><input type="number" name="txtPrecio"  [(ngModel)]="producto.precio" aria-label="Precio de Producto"></td>
+        </tr>
+    </table>
+</form>
+
+<button (click)="guardar()">Guardar</button>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+    </tr>
+    <tr *ngFor="let pro of productos | async">
+        <td>{{pro.id}}</td>
+        <td>{{pro.nombre}}</td>
+        <td>{{pro.categoria}}</td>
+        <td>{{pro.precio}}</td>
+    </tr>
+</table>

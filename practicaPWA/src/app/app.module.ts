@@ -18,6 +18,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HttpClientModule} from '@angular/common/http';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { FacturasComponent } from './pages/facturas/facturas.component';
+import { ProductosComponent } from './pages/productos/productos.component';
+import { DetallesComponent } from './pages/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     CrearComponent,
     VisualizarComponent,
     EditarComponent,
-    ClientesComponent
+    ClientesComponent,
+    FacturasComponent,
+    ProductosComponent,
+    DetallesComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

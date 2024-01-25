@@ -1,0 +1,50 @@
+<h1>Facturas</h1>
+
+<form>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input type="number" name="txtId"  [(ngModel)]="factura.id" aria-label="ID de Factura"></td>
+        </tr>
+        <tr>
+            <td>Fecha:</td>
+            <td><input type="text" name="txtFecha"  [(ngModel)]="factura.fecha" aria-label="Fecha de Factura"></td>
+        </tr>
+        <tr>
+            <td>Cedula:</td>
+            <td><input type="text" name="txtCliente"  [(ngModel)]="factura.cedula" aria-label="Cliente de Factura"></td>
+        </tr>
+    </table>
+
+    <ul>
+        <li *ngFor="let detalle of detalles">
+          <input type="checkbox" [value]="detalle" (change)="toggleDetalle(detalle)" aria-label="detalles"> {{detalle.nombre}}
+        </li>
+    </ul>
+</form>
+
+<button (click)="guardar()">Guardar</button>
+
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Fecha</th>
+      <th>Cliente</th>
+      <th>Acciones</th> <!-- Nueva columna para el botón -->
+    </tr>
+    <tr *ngFor="let fac of facturas | async">
+      <td>{{fac.id}}</td>
+      <td>{{fac.fecha}}</td>
+      <td>{{fac.cliente.nombre}}</td>
+      <td>
+        <!-- Agrega un botón para mostrar los detalles -->
+        <button (click)="mostrarDetalles(fac)">Mostrar Detalles</button>
+      </td>
+    </tr>
+</table>
+
+<div *ngFor="let fac of facturas | async">
+    <h2>Detalles de la Factura</h2>
+    <p>{{fac.detalle?.nombre}} - Cantidad: {{fac.detalle?.cantidad}}</p>
+    <!-- Mostrar más información de los detalles según tus necesidades -->
+</div>

@@ -10,5 +10,8 @@ export class MenuComponent {
     {titulo: 'Crear', path: 'paginas/crear'},
     {titulo: 'Visualizar', path: 'paginas/visualizar'},
     {titulo: 'Clientes', path: 'paginas/clientes'},
+    {titulo: 'Facturas', path: 'paginas/facturas'},
+    {titulo: 'Productos', path: 'paginas/productos'},
+    {titulo: 'Detalles', path: 'paginas/detalles'},
   ]
 }
