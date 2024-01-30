@@ -5,5 +5,5 @@ export class Factura{
     id?: number;
     fecha?: String;
     cedula?: String;
-    detalle?: Detalle;
+    detalle?: Detalle[];
 }

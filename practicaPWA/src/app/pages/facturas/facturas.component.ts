@@ -13,20 +13,19 @@ import { Detalle } from '../domain/detalle';
 export class FacturasComponent implements OnInit{
   facturas: any
   detalles: any
-  facturaSeleccionada: Factura | null = null;
-  mostrarDetalle:Boolean = false; // Variable de estado
+  detallesM: any
+  codigoF: number
 
   factura: Factura = new Factura()
 
   detallesSeleccionados: Detalle[] = [];
 
-  constructor(private facturasServices: FacturaService, private detallesService: DetalleService){
-
-  }
+  constructor(private facturasServices: FacturaService, private detallesService: DetalleService){this.codigoF= 0}
 
   ngOnInit(): void {
     this.facturas = this.facturasServices.getFacturas()
     this.cargarDetalles();
+    this.detallesM = this.facturasServices.getDetalles()
   }
 
   cargarDetalles() {
@@ -63,9 +62,5 @@ export class FacturasComponent implements OnInit{
         alert("Error al insertar: La respuesta es nula.");
       }
     })
-  }
-
-  mostrarDetalles(factura: Factura) {
-    this.facturaSeleccionada = factura;
   }
 }

@@ -11,10 +11,6 @@
             <td><input type="number" name="txtCantidad"  [(ngModel)]="detalle.cantidad" aria-label="Cantidad de Detalle"></td>
         </tr>
         <tr>
-            <td>Nombre:</td>
-            <td><input type="text" name="txtNombre"  [(ngModel)]="detalle.nombre" aria-label="Nombre de Detalle"></td>
-        </tr>
-        <tr>
             <td>Producto:</td>
             <td><input type="number" name="txtProducto"  [(ngModel)]="detalle.codigoP" aria-label="Producto de Detalle"></td>
         </tr>
@@ -31,13 +27,11 @@
     <tr>
         <th>ID</th>
         <th>Cantidad</th>
-        <th>Nombre</th>
         <th>Producto</th>
     </tr>
     <tr *ngFor="let det of detalles | async">
         <td>{{det.id}}</td>
         <td>{{det.cantidad}}</td>
-        <td>{{det.nombre}}</td>
         <td>{{det.producto.nombre}}</td>
     </tr>
 </table>

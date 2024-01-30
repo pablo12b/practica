@@ -21,6 +21,11 @@ export class FacturaService {
     return this.http.get<any>(url)
   }
 
+  getDetalles(){
+    let url = environment.WS_PATH + "/facturas/lista/detalle/";
+    return this.http.get<any>(url)
+  }
+
   saveFacturas(factura: Factura, detalles: Detalle[] = []){
     let url = environment.WS_PATH + "/facturas/detalles/";
     const facturaConDetalles = {
